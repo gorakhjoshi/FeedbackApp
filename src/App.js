@@ -7,7 +7,9 @@ function App() {
   return (
     <>
       <Header />
-      <FeedbackList feedback={feedback} />
+      <div className='container'>
+        <FeedbackList feedback={feedback} />
+      </div>
     </>
   );
 }
