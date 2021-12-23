@@ -1,11 +1,28 @@
-import React from 'react';
+import { useState } from 'react';
 import Button from './shared/Button';
 import Card from './shared/Card';
 
 function FeedbackForm() {
-  const [text, setText] = React.useState('');
+  const [text, setText] = useState('');
+
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  console.log(btnDisabled);
+
   const handleChangeText = (e) => {
-    setText(e.target.value);
+    console.log('I am from handler');
+    if (text === '') {
+      console.log('I am from 1st if');
+      setBtnDisabled(true);
+    }
+
+    console.log(text);
+
+    if (text !== '' && text.trim().length <= 10) {
+      setBtnDisabled(true);
+    } else {
+      console.log('I am from last if block');
+      setBtnDisabled(false);
+    }
   };
 
   return (
@@ -18,8 +35,9 @@ function FeedbackForm() {
             onChange={handleChangeText}
             placeholder='Write your review'
           />
-          <Button> Send </Button>
+          <Button isDisabled={btnDisabled}> Send </Button>
         </div>
+        <h1>{text}</h1>
       </form>
     </Card>
   );
