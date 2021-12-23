@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './shared/Card';
 import { FaTimesCircle } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 function FeedbackItem({ item, handleDelete }) {
   return (
@@ -13,5 +14,9 @@ function FeedbackItem({ item, handleDelete }) {
     </Card>
   );
 }
+
+FeedbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
 
 export default FeedbackItem;
