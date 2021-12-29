@@ -26,10 +26,12 @@ function FeedbackForm({ handleAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (text.trim().length > 10) {
-    //   const newFeedback = { rating, text };
-    //   handleAdd(newFeedback);
-    // }
+    if (text.trim().length > 10) {
+      const newFeedback = { rating, text };
+      handleAdd(newFeedback);
+
+      setText('');
+    }
   };
 
   return (

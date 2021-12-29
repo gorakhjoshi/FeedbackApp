@@ -5,6 +5,7 @@ import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import Button from './components/shared/Button';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [feedback, setFeedback] = React.useState(FeedbackData);
@@ -16,7 +17,8 @@ function App() {
   };
 
   const addFeedback = (newFeedback) => {
-    // setFeedback(newFeedback);
+    newFeedback.id = uuidv4();
+    setFeedback([...feedback, newFeedback]);
   };
 
   return (
