@@ -4,7 +4,6 @@ import { FeedbackData } from './data/FeedbackData';
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
-import Button from './components/shared/Button';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
